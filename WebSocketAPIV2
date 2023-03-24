@@ -1,0 +1,1 @@
+# Connect Websocket API by using access token before use and insert Sec-WebSocket-Protocol with value 'koneapi' in the header
