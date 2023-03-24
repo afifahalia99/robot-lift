@@ -69,6 +69,6 @@ efficiency can be enhanced since Omni Robot ensure precision with security innov
 11. Connect the websocket
 12. Send the message
 
-Gantt Chart
+# Gantt Chart
 <img width="774" alt="image" src="https://user-images.githubusercontent.com/125621528/227426369-f15fbb56-4c05-4f5b-8ef5-4f9673a06204.png">
 
