@@ -1,0 +1,19 @@
+{
+  "type": "lift-call-api-v2",
+  "buildingId": "building:{{buildingId}}",
+  "callType": "action",
+  "groupId": "1",
+  "payload": {
+     "request_id": 252390420,
+     "media_type": "RFID",
+     "media_id": "00008573f4",
+     "media_cc": "123",        
+     "area": 1000, //lift deck area id
+     "time": "2022-03-10T07:17:33.298515Z",
+     "terminal": 1,
+     "call": { 
+        "action": 2, 
+        "destination": 3000
+      }
+    }  
+ }
