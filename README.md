@@ -54,3 +54,18 @@ efficiency can be enhanced since Omni Robot ensure precision with security innov
 
 + Do not use on uneven roads
 
+# Instructions
+
+1. Create an application at Sandbox and copy client id and client secret
+2. Open postman 
+3. Create HTTP request, choose POST and enter this url : https://dev.kone.com/api/v2/oauth2/token
+4. Open new tab, choose get and enter this url: https://dev.kone.com/api/v2/application/self/resources
+5. Copy any building id
+6. Use client id and client secret at Authorization(Basic authentication) to generate token access 
+7. Copy token access 
+8. Open Websocket request, choose raw and inside this url:wss://dev.kone.com/stream-v2
+9. In Params, enter accessToken 
+10.In header, enter Sec-WebSocket-Protocol and value 'koneapi'
+11. Connect the websocket
+12. Send the message
+
