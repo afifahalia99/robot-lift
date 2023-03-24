@@ -24,11 +24,11 @@ efficiency can be enhanced since Omni Robot ensure precision with security innov
   
  + Hospital : Medicine and samples delivery
  
-#Solution Design Flow
+# Solution Design Flow
 
 ![Solution Design Flow](https://user-images.githubusercontent.com/125621528/227409651-3b2c82b8-8db2-4505-be03-a2f6cc28387d.JPG)
 
-#Solution Design Architecture
+# Solution Design Architecture
 
 ![Solution Architecture](https://user-images.githubusercontent.com/125621528/227409718-d84c36fe-abd6-4222-8c98-101ab185404a.JPG)
   
