@@ -1,4 +1,6 @@
-# Connect Websocket API by using access token before use and insert Sec-WebSocket-Protocol with value 'koneapi' in the header
+# Connect Websocket API by using access token from basic authentication with specific scope before use and insert Sec-WebSocket-Protocol with value 'koneapi' in the header
+
+#Destination call
 {
   "type": "lift-call-api-v2",
   "buildingId": "building:{{buildingId}}",
