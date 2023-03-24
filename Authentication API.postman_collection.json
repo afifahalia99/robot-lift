@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "76ec20a9-da94-4db4-b41d-3d70f29662f2",
+		"name": "Authentication API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26336766"
+	},
+	"item": [
+		{
+			"name": "Get access",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{ClientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{ClientId}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "application/inventory",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dev.kone.com/api/v2/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"kone",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "StartFragmen\n\nOAuth 2.0 token endpoint for authorization to make an API calls by using basic authentication and without specific scope"
+			},
+			"response": []
+		},
+		{
+			"name": "Limited Access Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "endUserIdentity",
+						"value": "android-user-xyz",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"endUserIdentity\": \"android-user-xyz\",\r\n  \"scopes\": [\r\n    \"application/inventory\"\r\n  ],\r\n  \"maxAgeSeconds\": 60,\r\n  \"singleUse\": false\r\n}"
+				},
+				"url": {
+					"raw": "https://dev.kone.com/api/v2/oauth2/limited-token",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"kone",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"oauth2",
+						"limited-token"
+					]
+				},
+				"description": "StartFragment\n\nConverted master token to limited token which have a shorter lifespan and can be used by user with no authorization to make an API calls for a longer time\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Get OpenID Configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dev.kone.com/api/v2/oauth2/.well-known/openid-configuration",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"kone",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"oauth2",
+						".well-known",
+						"openid-configuration"
+					]
+				},
+				"description": "StartFragment\n\nReturns the OpenID configuration of the service\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "Desribe JWT Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v2/oauth2/userinfo",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"oauth2",
+						"userinfo"
+					]
+				},
+				"description": "StartFragment\n\nUse to debug JWT token and allow safe testing which authorized by limited access token or master token"
+			},
+			"response": []
+		},
+		{
+			"name": "List All Resource",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token.scopes",
+						"value": "application/inventory",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/v2/application/self/resources",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"application",
+						"self",
+						"resources"
+					]
+				},
+				"description": "StartFragment\n\nLists all resource identifiers the application is allowed to request access by using limited access token or master token"
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication Websocket",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{ClientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{ClientId}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "robotcall/group:4TFxWRCv23D:1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dev.kone.com/api/v2/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"kone",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "StartFragment\n\n  \nGenerate token by using access token with credential of an accessible application to certain API to make an API call through POST request"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://dev.kone.com"
+		}
+	]
+}
