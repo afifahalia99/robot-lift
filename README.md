@@ -70,5 +70,6 @@ efficiency can be enhanced since Omni Robot ensure precision with security innov
 12. Send the message
 
 # Gantt Chart
-<img width="774" alt="image" src="https://user-images.githubusercontent.com/125621528/227426369-f15fbb56-4c05-4f5b-8ef5-4f9673a06204.png">
+<img width="757" alt="image" src="https://user-images.githubusercontent.com/125621528/227429466-5614d1d1-e6b2-4ce6-aaf3-3f97ddc9e9aa.png">
+
 
