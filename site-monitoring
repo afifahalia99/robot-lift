@@ -1,0 +1,12 @@
+{
+   "type": "site-monitoring",
+   "requestId": "01841d1c-f4ba-4f9c-a348-6f679bfae86e",
+   "buildingId": "building:{{buildingId}}",
+   "callType": "monitor",
+   "groupId": "1",
+   "payload": { 
+     "sub": "smartOfficeLiftSouthWing_user123", 
+     "duration": 300, 
+     "subtopics": ["call_state/123/fixed"] 
+   }
+}
