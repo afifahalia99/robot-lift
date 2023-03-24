@@ -1,9 +1,0 @@
-{
-  "type": "common-api",
-  "buildingId": "building:{{buildingId}}",
-  "callType": "ping",
-  "groupId": "1",
-  "payload": {
-     "request_id": 1352 
-   }
-}
