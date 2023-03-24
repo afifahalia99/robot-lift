@@ -1,0 +1,7 @@
+{
+  "type": "common-api",
+  "requestId": "5e9e1d31-3d2c-42c7-907a-d8874117fb27",
+  "buildingId": "building:{{buildingId}}",
+  "callType": "config",
+  "groupId": "1"
+}
